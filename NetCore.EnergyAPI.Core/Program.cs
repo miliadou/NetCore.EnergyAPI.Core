@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NetCore.EnergyAPI.Core
+namespace NetCore.Energy.Core
 {
     public class Program
     {

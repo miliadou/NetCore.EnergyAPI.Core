@@ -1,15 +1,19 @@
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Diagnostics.HealthChecks;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using NetCore.Energy.Core.Controllers;
+using NetCore.Energy.Core.Implementation;
+using NetCore.Energy.Core.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NetCore.EnergyAPI.Core
+namespace NetCore.Energy.Core
 {
     public class Startup
     {
@@ -23,7 +27,12 @@ namespace NetCore.EnergyAPI.Core
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddRazorPages();
+            services.AddSingleton<IEnergyService, EnergyService>();
+
+            services.AddHealthChecks();
+
+            services.AddControllers()
+            .AddApplicationPart(typeof(EnergyController).Assembly);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -31,26 +40,28 @@ namespace NetCore.EnergyAPI.Core
         {
             if (env.IsDevelopment())
             {
-                app.UseDeveloperExceptionPage();
+                app.UseExceptionHandler("/error-local-development");
             }
             else
             {
-                app.UseExceptionHandler("/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
+                app.UseExceptionHandler("/error");
             }
 
-            app.UseHttpsRedirection();
+            //app.UseHttpsRedirection();
             app.UseStaticFiles();
 
             app.UseRouting();
 
-            app.UseAuthorization();
-
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapRazorPages();
+                endpoints.MapControllers();
+
+                endpoints.MapHealthChecks("/health", new HealthCheckOptions
+                {
+                    AllowCachingResponses = false
+                });
             });
+
         }
     }
 }

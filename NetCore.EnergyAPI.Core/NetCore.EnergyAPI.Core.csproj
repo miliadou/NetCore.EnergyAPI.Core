@@ -4,4 +4,10 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\api\NetCore.Energy.Core.Controllers\NetCore.Energy.Core.Controllers.csproj" />
+    <ProjectReference Include="..\api\NetCore.Energy.Core.Implementation\NetCore.Energy.Core.Implementation.csproj" />
+    <ProjectReference Include="..\api\NetCore.Energy.Core.Interfaces\NetCore.Energy.Core.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>

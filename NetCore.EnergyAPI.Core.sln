@@ -5,6 +5,16 @@ VisualStudioVersion = 16.0.32228.343
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetCore.EnergyAPI.Core", "NetCore.EnergyAPI.Core\NetCore.EnergyAPI.Core.csproj", "{4F30132B-0C1A-48D8-B1E7-22AE2EC6B104}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "api", "api", "{80D4A6BB-2F0E-4724-AB6B-A53682EE59EB}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Energy.Core.Controllers", "api\NetCore.Energy.Core.Controllers\NetCore.Energy.Core.Controllers.csproj", "{CAB223FF-C953-48EB-A6D7-588A829E7000}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Energy.Core.Implementation", "api\NetCore.Energy.Core.Implementation\NetCore.Energy.Core.Implementation.csproj", "{87CF69AE-6C46-48D5-B7AA-4213F14E4FBD}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Energy.Core.Interfaces", "api\NetCore.Energy.Core.Interfaces\NetCore.Energy.Core.Interfaces.csproj", "{C6A7F76D-6436-43A4-B3DF-A942B47E768A}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetCore.Energy.Core.Types", "api\NetCore.Energy.Core.Types\NetCore.Energy.Core.Types.csproj", "{8604426E-C7BA-4C26-BDE6-E00D85FDB799}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,9 +25,31 @@ Global
 		{4F30132B-0C1A-48D8-B1E7-22AE2EC6B104}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4F30132B-0C1A-48D8-B1E7-22AE2EC6B104}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4F30132B-0C1A-48D8-B1E7-22AE2EC6B104}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAB223FF-C953-48EB-A6D7-588A829E7000}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAB223FF-C953-48EB-A6D7-588A829E7000}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAB223FF-C953-48EB-A6D7-588A829E7000}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAB223FF-C953-48EB-A6D7-588A829E7000}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87CF69AE-6C46-48D5-B7AA-4213F14E4FBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87CF69AE-6C46-48D5-B7AA-4213F14E4FBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87CF69AE-6C46-48D5-B7AA-4213F14E4FBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87CF69AE-6C46-48D5-B7AA-4213F14E4FBD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C6A7F76D-6436-43A4-B3DF-A942B47E768A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C6A7F76D-6436-43A4-B3DF-A942B47E768A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C6A7F76D-6436-43A4-B3DF-A942B47E768A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C6A7F76D-6436-43A4-B3DF-A942B47E768A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8604426E-C7BA-4C26-BDE6-E00D85FDB799}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8604426E-C7BA-4C26-BDE6-E00D85FDB799}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8604426E-C7BA-4C26-BDE6-E00D85FDB799}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8604426E-C7BA-4C26-BDE6-E00D85FDB799}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{CAB223FF-C953-48EB-A6D7-588A829E7000} = {80D4A6BB-2F0E-4724-AB6B-A53682EE59EB}
+		{87CF69AE-6C46-48D5-B7AA-4213F14E4FBD} = {80D4A6BB-2F0E-4724-AB6B-A53682EE59EB}
+		{C6A7F76D-6436-43A4-B3DF-A942B47E768A} = {80D4A6BB-2F0E-4724-AB6B-A53682EE59EB}
+		{8604426E-C7BA-4C26-BDE6-E00D85FDB799} = {80D4A6BB-2F0E-4724-AB6B-A53682EE59EB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {EA97319B-A743-4F5C-B23A-73FC63E0C3EC}
