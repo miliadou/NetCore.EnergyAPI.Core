@@ -29,5 +29,8 @@ namespace NetCore.Energy.Core.Types
 
         [DataMember(Name = "created")]
         public DateTime Created { get; set; }
+
+        [DataMember(Name = "processed")]
+        public bool Processed { get; set; }
     }
 }

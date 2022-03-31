@@ -3,6 +3,7 @@ using Microsoft.Extensions.Logging;
 using NetCore.Energy.Core.Interfaces;
 using NetCore.Energy.Core.Types;
 using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 
 namespace NetCore.Energy.Core.Controllers
@@ -20,7 +21,7 @@ namespace NetCore.Energy.Core.Controllers
         }       
 
         [HttpPost("firstRoute")]
-        public async Task<Package> GetPackageData(GetPackageDataRequest request)
+        public async Task<List<Package>> GetPackageData(GetPackageDataRequest request)
         {           
             return await _energyService.GetPackageData(request);           
         }

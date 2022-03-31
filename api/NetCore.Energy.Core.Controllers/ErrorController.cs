@@ -13,8 +13,8 @@ namespace NetCore.Energy.Core.Controllers
 
             return ValidationProblem(new ValidationProblemDetails
             {
-                Detail = context.Error.StackTrace,
-                Title = context.Error.StackTrace,
+                Title = context.Error.Message,
+                Detail = context.Error.StackTrace
             });
         }
 
