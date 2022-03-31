@@ -10,19 +10,15 @@ using System.Threading.Tasks;
 namespace NetCore.Energy.Core.Implementation
 {
     public partial class EnergyService : IEnergyService
-    {
-        private HttpClient _httpClient;
+    {      
         private IHttpClientService _httpClientService;
-
-        private readonly IHttpClientFactory _httpClientFactory;
-        public EnergyService(IHttpClientFactory httpClientFactory, HttpClient httpClient, IHttpClientService httpClientService)
-        {
-            _httpClientFactory = httpClientFactory;
-            _httpClient = httpClient;
+      
+        public EnergyService(IHttpClientService httpClientService)
+        {          
             _httpClientService = httpClientService;
         }
 
-       public async Task<List<Package>> GetPackageData(GetPackageDataRequest request)
+       public async Task<GetPackageDataResponse> GetWSDataAsync(GetPackageDataRequest request)
        {
             try
             {
@@ -32,7 +28,10 @@ namespace NetCore.Energy.Core.Implementation
                 {
                     item.Processed = true;
                 }
-                return data;
+                return new GetPackageDataResponse
+                { 
+                    Packages = data
+                };
             }
             catch (Exception ex)
             {
@@ -40,5 +39,10 @@ namespace NetCore.Energy.Core.Implementation
                 throw ex;
             }
        }
+
+        public async Task<GetDBDataResponse> GetDBDataAsync(GetDBDataRequest request)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

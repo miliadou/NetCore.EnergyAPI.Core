@@ -7,6 +7,8 @@ namespace NetCore.Energy.Core.Interfaces
 {
     public interface IEnergyService
     {
-        Task<List<Package>> GetPackageData(GetPackageDataRequest request);
+        Task<GetPackageDataResponse> GetWSDataAsync(GetPackageDataRequest request);
+
+        Task<GetDBDataResponse> GetDBDataAsync(GetDBDataRequest request);
     }
 }

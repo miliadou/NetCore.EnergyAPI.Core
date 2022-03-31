@@ -20,10 +20,16 @@ namespace NetCore.Energy.Core.Controllers
             _energyService = energyService;
         }       
 
-        [HttpPost("firstRoute")]
-        public async Task<List<Package>> GetPackageData(GetPackageDataRequest request)
+        [HttpPost("getWSData")]
+        public async Task<GetPackageDataResponse> GetWSData(GetPackageDataRequest request)
         {           
-            return await _energyService.GetPackageData(request);           
+            return await _energyService.GetWSDataAsync(request);           
+        }
+
+        [HttpPost("getDBData")]
+        public async Task<GetDBDataResponse> GetDBData(GetDBDataRequest request)
+        {
+            return await _energyService.GetDBDataAsync(request);
         }
     }
 }
